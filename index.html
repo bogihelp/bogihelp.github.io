@@ -218,16 +218,23 @@
       &copy; 2025 Кирил Милетиев | Всички права запазени |
       kirilmiletiev@gmail.com
     </footer>
+
     <script>
       function showPage(pageId) {
         document.querySelectorAll(".page").forEach((page) => {
           page.classList.remove("active");
         });
         document.getElementById(pageId).classList.add("active");
+
+        // Ако сме в мобилен изглед - затваря менюто
+        if (window.innerWidth <= 768) {
+          toggleMenu();
+        }
       }
 
       function toggleMenu() {
-        document.querySelector(".nav-links").classList.toggle("show");
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("show");
       }
     </script>
   </body>
